@@ -6,10 +6,10 @@ workflows:
     jobs:
       - hello-build/hello-build
 
-  Every Minute:
+  Every 20m:
     triggers:
       - schedule:
-          cron: "* * * * *"
+          cron: "0,20,40 * * * *"
           filters:
             branches:
               only:
