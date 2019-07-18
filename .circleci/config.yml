@@ -5,3 +5,14 @@ workflows:
   Hello Workflow:
     jobs:
       - hello-build/hello-build
+
+  Every Minute:
+    triggers:
+      - schedule:
+          cron: "* * * * *"
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - hello-build/hello-build
